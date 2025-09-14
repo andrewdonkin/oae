@@ -1,0 +1,31 @@
+openapi: 3.1.0
+info: {  title: ., version: '1.0'}
+
+paths:
+  /example:
+    post:
+      summary: CLICK ME!
+      description: Make sure "body" is selected in the request body, then change 'CHANGEME!'.
+      requestBody:
+        description: request body description          
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/requestBodySchema'
+            examples:
+              "CHANGEME!": { description: oneoneone, value: {ape: "Kong"} }
+              twotwotwo: { description: twotwotwo, value: {ape: "Clyde"} }
+              threethre: { description: threethre, value: {ape: "The Bear"} }
+      responses:
+        "200":
+          description: desc
+          content:
+            application/json:
+              schema: { type: object, properties: {ape: {type: string}}}
+              examples:
+                clyde: { description: response 11111111, value: {ape: Clyde} }
+                kong: { description: response 22222222, value: {ape: Kong} }
+
+components:
+  schemas:
+    requestBodySchema: { description: "not shown?" }
