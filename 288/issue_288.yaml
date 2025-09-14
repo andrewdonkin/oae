@@ -5,11 +5,11 @@ info:
   version: "1.0"
   title: "Demonstrating OpenAPI Explorer issue 288"
   description: |
-    First linen of the info's description.  No heading precedes it.
+    First line of the info's description.  No heading precedes it.
 
-    With issue 288 unsolved, clicking the headings in the navbar to the left scrolls the content to the top of the page, not to the heading's section.
+    With issue 288 unsolved, clicking the headings in the Info section in the navbar to the left scrolls the content to the top of the info description, not to the heading's section.
 
-    It also leaves the navbar's highlight on whatever you clicked on before.
+    (Also, clicking on a one-hash heading such as the two 'click me's does not move the highlight in the navbar.  Clicking on an H2 does.  Separate issue.)
 
     <hr/>
     
@@ -325,7 +325,7 @@ info:
 
     <hr/>
 
-    # Info H1 heading.  Click me second!
+    # Info H1 heading.  CLICK ME SECOND!
 
     Redoc's problem is that there is no navbar entry for the top of this description, so viewers can easily think that this is the first line of content.
 
@@ -525,7 +525,7 @@ info:
 tags:
 - name: Tag with headings
   description: |
-    # h1.  Click me first!
+    # h1.  CLICK ME FIRST!
     body 1
     ## h2
     body 2
