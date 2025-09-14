@@ -1,11 +1,14 @@
 openapi: 3.1.0
-info: {  title: ., version: '1.0'}
+info:
+  title: OpenAPI Explorer issue 289
+  version: '1.0'
+  description: "Click on the 'CLICK ME!' operation if it isn't visible already, then change the example request body from 'CHANGEME!'."
 
 paths:
   /example:
     post:
-      summary: CLICK ME!
-      description: Make sure "body" is selected in the request body, then change 'CHANGEME!'.
+      summary: "CLICK ME!"
+      description: "Make sure 'body' is selected in the request body, then change 'CHANGEME!'."
       requestBody:
         description: request body description          
         content:
@@ -13,7 +16,7 @@ paths:
             schema:
               $ref: '#/components/schemas/requestBodySchema'
             examples:
-              "CHANGEME!": { description: oneoneone, value: {ape: "Kong"} }
+              "CHANGEME!": { description: "This description should change when you pick a different example", value: {ape: "Kong"} }
               twotwotwo: { description: twotwotwo, value: {ape: "Clyde"} }
               threethre: { description: threethre, value: {ape: "The Bear"} }
       responses:
