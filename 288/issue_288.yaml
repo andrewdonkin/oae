@@ -1,0 +1,548 @@
+openapi: "3.1.0"
+components: { schemas: { must_have_a_schema_for_linting: { type: string }}}
+servers: [url: https://localhost:8904]
+info:
+  version: "1.0"
+  title: "Demonstrating OpenAPI Explorer issue 288"
+  description: |
+    First linen of the info's description.  No heading precedes it.
+
+    With issue 288 unsolved, clicking the headings in the navbar to the left scrolls the content to the top of the page, not to the heading's section.
+
+    It also leaves the navbar's highlight on whatever you clicked on before.
+
+    <hr/>
+    
+    asdf
+    adfs
+    adsf
+    adfs
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs
+    asdf
+    adfs
+    adsf
+    adfs
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs
+    asdf
+    adfs
+    adsf
+    adfs
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs
+    asdf
+    adfs
+    adsf
+    adfs
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs
+    asdf
+    adfs
+    adsf
+    adfs
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs
+    asdf
+    adfs
+    adsf
+    adfs
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs
+    asdf
+    adfs
+    adsf
+    adfs
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs
+
+    asdf
+    adfs
+    adsf
+    adfs
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs
+    asdf
+    adfs
+    adsf
+    adfs
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs
+    asdf
+    adfs
+    adsf
+    adfs
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs
+    asdf
+    adfs
+    adsf
+    adfs
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs
+    asdf
+    adfs
+    adsf
+    adfs
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs
+    asdf
+    adfs
+    adsf
+    adfs
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs
+    asdf
+    adfs
+    adsf
+    adfs
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs
+    asdf
+    adfs
+    adsf
+    adfs
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs
+    asdf
+    adfs
+    adsf
+    adfs
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs
+    asdf
+    adfs
+    adsf
+    adfs
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs
+    asdf
+    adfs
+    adsf
+    adfs
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs
+    asdf
+    adfs
+    adsf
+    adfs
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs
+    asdf
+    adfs
+    adsf
+    adfs
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs
+    asdf
+    adfs
+    adsf
+    adfs
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs
+    asdf
+    adfs
+    adsf
+    adfs
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs
+    asdf
+    adfs
+    adsf
+    adfs
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs
+    asdf
+    adfs
+    adsf
+    adfs
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs
+    asdf
+    adfs
+    adsf
+    adfs
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs
+    asdf
+    adfs
+    adsf
+    adfs
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs
+    asdf
+    adfs
+    adsf
+    adfs
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs
+    asdf
+    adfs
+    adsf
+    adfs
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs
+
+    <hr/>
+
+    # Info H1 heading.  Click me second!
+
+    Redoc's problem is that there is no navbar entry for the top of this description, so viewers can easily think that this is the first line of content.
+
+    asdf
+    adfs
+    adsf
+    adfs
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs
+    asdf
+    adfs
+    adsf
+    asdf
+    adfs
+    adsf
+    adfs
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs
+    asdf
+    adfs
+    adsf
+    asdf
+    adfs
+    adsf
+    adfs
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs
+    asdf
+    adfs
+    adsf
+    asdf
+    adfs
+    adsf
+    adfs
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs
+    asdf
+    adfs
+    adsf
+    adfs
+    asdf
+    adfs
+    adsf
+    adfs
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs
+    asdf
+    adfs
+    adsf
+    asdf
+    adfs
+    adsf
+    adfs
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs
+    asdf
+    adfs
+    adsf
+    asdf
+    adfs
+    adsf
+    adfs
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs
+    asdf
+    adfs
+    adsf
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs
+    asdf
+    adfs
+    adsf
+    adfs
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs
+    asdf
+    adfs
+    adsf
+    adfs
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs
+    asdf
+    adfs
+    adsf
+    adfs
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs
+    asdf
+    adfs
+    adsf
+    adfs
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs
+    asdf
+    adfs
+    adsf
+    adfs
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs
+    asdf
+    adfs
+    adsf
+    adfs
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs 
+    asdf
+    adfs
+    adsf
+    adfs
+
+    aasdf
+    asdf
+
+    asdf
+
+    asdfdfs
+    
+    <hr/>
+
+    ## Info H2.
+    RapiDoc doesn't render 
+    <hr/>
+
+    ### Info H3.
+    H3 text.
+
+tags:
+- name: Tag with headings
+  description: |
+    # h1.  Click me first!
+    body 1
+    ## h2
+    body 2
+    ## h2.2
+    body 2.2
+    ## h22.  Clashes with the one above.
+    body 22.  The href for this section clashes with h2.2
+
+paths:
+  /api:
+    get:
+      tags: ["Tag with headings"]
+      description: This operation is here because RapiDoc doesn't show tags that don't have operations, and I need RapiDoc to show the tag's headings in its navbar.
+      summary: ignore_me
+      responses:
+        "200":
+          description: desc
+          content:
+            application/json:
+              schema: { type: object, properties: {ape: {type: string}}}
