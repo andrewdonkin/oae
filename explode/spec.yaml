@@ -1,0 +1,55 @@
+openapi: 3.1.0
+servers: [url: https://localhost:8904]
+security: [ ]
+
+info:
+  version: 1
+  title: Default value for query parameter's `explode` 
+  description: |
+    OAS3 specifies a default of `true` for the `explode` field on query parameters, but OpenAPI Explorer uses a default of `false`.
+
+    Unless you're viewing the RapiDoc page:  it doesn't show defaults, so you need to fill in your own values and see how they look in the Curl command.
+
+paths:
+  /api:
+    get:
+      summary: CLICK ME
+      description: |
+        See each query parameter's descriptions and (in OpenAPI Explorer and RapiDoc) Curl command or (in Redoc) defaults.
+      
+
+      parameters:
+      - name: "explodeFalse"
+        in: query
+        explode: false
+        description:
+          Default should be `Mario,Luigi`.
+        schema:
+          type: array
+          default: [Mario, Luigi]
+          items:
+            type: string
+            enum: [Mario, Luigi, Bowser]
+
+      - name: "explodeTrue"
+        in: query
+        explode: true
+        description:
+          Default should be `Mario,explodeTrue=Luigi`.
+        schema:
+          type: array
+          default: [Mario, Luigi]
+          items:
+            type: string
+            enum: [Mario, Luigi, Bowser]
+
+      - name: "explodeNotSpecified"
+        in: query
+        description:
+          Default should be `Mario,explodeNotSpecified=Luigi`.
+        schema:
+          type: array
+          default: [Mario, Luigi]
+          items:
+            type: string
+            enum: [Mario, Luigi, Bowser]

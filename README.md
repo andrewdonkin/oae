@@ -7,6 +7,8 @@
 [Not handing <<-style merge keys](mergekey): the YAML parser not
 supporting merge keys, an optional extension to the YAML spec.
 
+[Wrong default for parameter `explode`](explode):  assuming a default of 'false' for 'explode' when it [should be true](https://swagger.io/docs/specification/v3_0/serialization/#query-parameters).
+
 <hr/>
 
 [Source repo](https://github.com/andrewdonkin/oae) if you are
