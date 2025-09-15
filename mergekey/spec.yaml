@@ -8,6 +8,7 @@ x-shared-blocks:
   this_key_also_also_irrelevant: &desc_block
     description: |
       OpenAPI's YAML parser does not support [Merge keys](https://yaml.org/type/merge.html).
+      If you can see this, merge keys are working.
 
   irrelevant5: &one_node
     description: If you can see this, the parser handles merge keys.
