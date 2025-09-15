@@ -4,4 +4,6 @@
 
 [Issue 289](289) (solved)
 
+[Not handing <<-style merge keys](mergekey)
+
 

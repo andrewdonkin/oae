@@ -1,0 +1,39 @@
+openapi: 3.1.0
+
+x-shared-blocks:
+  this_key_irrelevant: &title_block
+    title: OpenAPI Explorer's YAML parser not support merge keys
+  this_key_also_irrelevant: &version_block
+    version: "2.0"
+  this_key_also_also_irrelevant: &desc_block
+    description: |
+      OpenAPI's YAML parser does not support [Merge keys](https://yaml.org/type/merge.html).
+
+  irrelevant5: &one_node
+    description: If you can see this, the parser handles merge keys.
+
+  irrelevant4: &another_node
+    description: Referenced using a regular (non-merge) alias.
+
+    
+info:
+  <<: [*title_block, *version_block, *desc_block]
+
+paths:
+  /api:
+    get:
+      description: description
+      parameters:
+      - name: a
+        in: query
+        description: desc
+        schema:
+          type: string
+      responses:
+        # redoc requires numeric keys here.
+        200:
+          <<: *one_node
+        400:
+          <<: *one_node
+        404: *another_node
+        
