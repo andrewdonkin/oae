@@ -9,8 +9,9 @@
 taken but a good explanation): the YAML parser not supporting merge keys, an originally-optional
 now-obsolete extension to the YAML spec which I grew to rely on :-(
 
-[Wrong default for parameter `explode` demo](explode): assuming a default of 'false' for 'explode'
-on query parameters when it [weas true in
+[Wrong default for parameter `explode` demo](explode): ([github issue
+291](https://github.com/Authress-Engineering/openapi-explorer/issues/291) ) assuming a default of
+'false' for 'explode' on query parameters if you do not specify 'style=form' when it [was true in
 3.0](https://swagger.io/docs/specification/v3_0/serialization/#query-parameters) and [might be the
 same in 3.1](https://swagger.io/specification/#parameter-object).
 
