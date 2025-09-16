@@ -1,11 +1,20 @@
 <!doctype html>
 <html>
   <head>
-    <title>OpenAPI Explorer not parsing merge keys</title>
+    <title>OpenAPI Explorer using false as default for explode when style is not specified</title>
   </head>
   <body>
-    <h1>YAML parser not handling merge keys</h1>
-    <p>Merge keys are an optional extension to the YAML spec.</p>
+    <h1>When neither style nor explode is specified for a query param...</h1>
+
+    <p>...I believe the default should be style=form,explode=true.</p>
+    <p>OAS3.0 clearly
+    <a href=https://swagger.io/docs/specification/v3_0/serialization/#query-parameters>said that</a>
+    but OAS3.1 takes <a href=https://swagger.io/specification/#parameter-object>a bit more
+    reading</a> (it says the default is true when `style=form`, and separately that the default
+    value for `style` is `form` when used on a query parameter.
+
+    </p>
+    
     <p><a href=oae.html>OpenAPI Explorer</a></p>
     <p><a href=redoc.html>Redoc</a></p>
     <p><a href=rapidoc.html>RapiDoc</a></p>

@@ -6,24 +6,30 @@ info:
   version: 1
   title: Default value for query parameter's `explode` 
   description: |
-    OAS3 specifies a default of `true` for the `explode` field on query parameters, but OpenAPI Explorer uses a default of `false`.
+    OAS3.1 specifies a default of `form` for the `style` field on query parameters, and a default
+    value of `explode=true` when `style=form`.  OpenAPI Explorer uses a default of `explode=true`
+    when the spec contains `style=form`, but does not apply the default style when the spec omits
+    it.
 
-    Unless you're viewing the RapiDoc page:  it doesn't show defaults, so you need to fill in your own values and see how they look in the Curl command.
+    OAS 3.0 just said the default serialisation was `style=form,explode=true`.
+
+    Go to the `CLICK ME` path.
 
 paths:
-  /api:
+  /api/{explodeUnsetInPath}:
     get:
       summary: CLICK ME
       description: |
         See each query parameter's descriptions and (in OpenAPI Explorer and RapiDoc) Curl command or (in Redoc) defaults.
-      
+
+        Unless you're viewing the RapiDoc page:  it doesn't show defaults, so you need to fill in your own values and see how they look in the Curl command.
 
       parameters:
-      - name: "explodeFalse"
+      - name: "formAndFalse"
         in: query
+        style: form
         explode: false
-        description:
-          Default should be `Mario,Luigi`.
+        description: style=form and explode=false.  Default should be `Mario,Luigi`.  OpenAPI Explorer gets this right.
         schema:
           type: array
           default: [Mario, Luigi]
@@ -31,11 +37,11 @@ paths:
             type: string
             enum: [Mario, Luigi, Bowser]
 
-      - name: "explodeTrue"
+      - name: "formAndTrue"
         in: query
+        style: form
         explode: true
-        description:
-          Default should be `Mario,explodeTrue=Luigi`.
+        description: style=form and explode=true.  Default should be `Mario,formAndTrue=Luigi`.  OpenAPI Explorer gets this right.
         schema:
           type: array
           default: [Mario, Luigi]
@@ -43,10 +49,32 @@ paths:
             type: string
             enum: [Mario, Luigi, Bowser]
 
-      - name: "explodeNotSpecified"
+      - name: "formOnly"
+        in: query
+        style: form
+        description: style=form but explode left unspecified.  Default should be `Mario,formOnly=Luigi`.  OpenAPI Explorer gets this right.
+        schema:
+          type: array
+          default: [Mario, Luigi]
+          items:
+            type: string
+            enum: [Mario, Luigi, Bowser]
+
+      - name: "bothUnspecified"
         in: query
         description:
-          Default should be `Mario,explodeNotSpecified=Luigi`.
+          Neither `style` nor `explode` specified.  Default should be `Mario,bothUnspecified=Luigi`.  OpenAPI Explorer gets this wrong (if I'm reading the OAS spec correctly).
+        schema:
+          type: array
+          default: [Mario, Luigi]
+          items:
+            type: string
+            enum: [Mario, Luigi, Bowser]
+
+      - name: "explodeUnsetInPath"
+        in: path
+        description:
+          Path should contain `Mario,Luigi`.
         schema:
           type: array
           default: [Mario, Luigi]
