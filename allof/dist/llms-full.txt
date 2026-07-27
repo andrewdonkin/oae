@@ -1,0 +1,31 @@
+# allOf
+
+Testing handling of allOf and anyOf
+
+
+## API Reference
+
+### Checking allOf and anyOf
+
+Path: `/api.html`
+Version: 1
+
+Testing handling of allOf and anyOf
+
+
+#### Operations
+
+##### GET /api
+
+Summary: AllOf
+
+TODO
+
+
+Responses:
+- 200: AllOf
+- 201: Uses OneOf
+
+#### Models
+
+- usesAllOf: uses allOf

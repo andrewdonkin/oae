@@ -3,7 +3,7 @@ servers: [url: https://localhost:8904]
 security: [ ]
 
 info:
-  version: 1
+  version: "1"
   title: Checking allOf and anyOf
   description: |
     Testing handling of allOf and anyOf

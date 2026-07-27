@@ -1,0 +1,8 @@
+# allOf
+
+> Testing handling of allOf and anyOf
+
+## API Reference
+
+- [Checking allOf and anyOf](/api.html): Testing handling of allOf and anyOf
+- [AllOf](/api.html#operation-api-get): GET /api - TODO
