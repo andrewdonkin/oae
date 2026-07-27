@@ -6,13 +6,37 @@ info:
   version: "1"
   title: Checking allOf and anyOf
   description: |
-    Testing handling of allOf and anyOf
+    Testing handling of allOf and anyOf.
 
 components:
   schemas:
+    simple1:
+      title: Simple schema one title
+      description:  Simple schema one description
+      type: object
+      properties:
+        firstObjectField1:
+          type: string
+          example: firstObjectField1
+        firstObjectField2:
+          type: string
+          example: firstObjectField2
+
+    simple2:
+      title: Simple schema two title
+      description:  Simple schema two description
+      type: object
+      properties:
+        secondObjectField1:
+          type: string
+          example: secondObjectField1
+        secondObjectField2:
+          type: string
+          example: secondObjectField2
+
     usesAllOf:
-      title: Uses allOf
-      description: uses allOf
+      title: Uses allOf title
+      description: uses `allOf` description
       allOf:
         - type: object
           description: desc of first allOf object
@@ -20,23 +44,56 @@ components:
             firstObjectField1:
               type: string
               example: firstObjectField1
+            firstObjectField2:
+              type: string
+              example: firstObjectField2
         - type: object
-          description: desc of second allOf object
+          description: "desc of second allOf object.  RapiDoc shows it (go RapiDoc!)"
           properties:
             secondObjectField1:
               type: string
               example: secondObjectField1
+            secondObjectField2:
+              type: string
+              example: secondObjectField2
+
+    usesAnyOf:
+      title: Uses anyOf
+      description: uses anyOf
+      oneOf:
+        - type: object
+          description: desc1
+          title: title1
+          summary: summary1
+          properties:
+            firstObjectField1:
+              type: string
+              example: firstObjectField1
+            firstObjectField2:
+              type: string
+              example: firstObjectField2
+        - type: object
+          description: "desc of second anyOf object.  RapiDoc shows it (go RapiDoc!)"
+          properties:
+            secondObjectField1:
+              type: string
+              example: secondObjectField1
+            secondObjectField2:
+              type: string
+              example: secondObjectField2
+
     
 paths:
   /api:
     get:
       summary: AllOf
       description: |
-        TODO
+          Responses 200, 202, and 204 should appear the same.  Responses 201, 203, and 205 should
+          appear the same.
 
       responses:
         "200":
-          description: AllOf
+          description: Uses `allOf` on in-line schemas.
           content:
             application/json:
               schema:
@@ -61,7 +118,7 @@ paths:
                         example: secondObjectField2
 
         "201":
-          description: Uses OneOf
+          description: Uses OneOf with all schemas inlined
           content:
             application/json:
               schema:
@@ -98,3 +155,36 @@ paths:
                       secondObjectField2:
                         type: string
                         example: secondObjectField2
+
+        "202":
+          description: Uses AllOf to references.  Should be identical to 200.
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: "#/components/schemas/simple1"
+                  - $ref: "#/components/schemas/simple2"
+
+        "203":
+          description: Uses AnyOf to references.  Should be identical to 201.
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: "#/components/schemas/simple1"
+                  - $ref: "#/components/schemas/simple2"
+
+        "204":
+          description: Uses a reference to a schema that uses allOf
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/usesAllOf"
+
+        "205":
+          description: Uses a reference to a schema that uses anyOf
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/usesAnyOf"
+
