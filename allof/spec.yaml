@@ -17,10 +17,10 @@ components:
       properties:
         firstObjectField1:
           type: string
-          example: firstObjectField1
+          example: firstObjectField1 example
         firstObjectField2:
           type: string
-          example: firstObjectField2
+          example: firstObjectField2 example
 
     simple2:
       title: Simple schema two title
@@ -29,10 +29,10 @@ components:
       properties:
         secondObjectField1:
           type: string
-          example: secondObjectField1
+          example: secondObjectField1 example
         secondObjectField2:
           type: string
-          example: secondObjectField2
+          example: secondObjectField2 example
 
     usesAllOf:
       title: Uses allOf title
@@ -43,23 +43,23 @@ components:
           properties:
             firstObjectField1:
               type: string
-              example: firstObjectField1
+              example: firstObjectField1 example
             firstObjectField2:
               type: string
-              example: firstObjectField2
+              example: firstObjectField2 example
         - type: object
           description: "desc of second allOf object.  RapiDoc shows it (go RapiDoc!)"
           properties:
             secondObjectField1:
               type: string
-              example: secondObjectField1
+              example: secondObjectField1 example
             secondObjectField2:
               type: string
-              example: secondObjectField2
+              example: secondObjectField2 example
 
     usesAnyOf:
-      title: Uses anyOf
-      description: uses anyOf
+      title: Uses anyOf title
+      description: uses anyOf description
       oneOf:
         - type: object
           description: desc1
@@ -68,25 +68,25 @@ components:
           properties:
             firstObjectField1:
               type: string
-              example: firstObjectField1
+              example: firstObjectField1 example
             firstObjectField2:
               type: string
-              example: firstObjectField2
+              example: firstObjectField2 example
         - type: object
           description: "desc of second anyOf object.  RapiDoc shows it (go RapiDoc!)"
           properties:
             secondObjectField1:
               type: string
-              example: secondObjectField1
+              example: secondObjectField1 example
             secondObjectField2:
               type: string
-              example: secondObjectField2
+              example: secondObjectField2 example
 
     
 paths:
   /api:
     get:
-      summary: AllOf
+      summary: AllOf path summary
       description: |
           Responses 200, 202, and 204 should appear the same.  Responses 201, 203, and 205 should
           appear the same.
@@ -103,19 +103,19 @@ paths:
                     properties:
                       firstObjectField1:
                         type: string
-                        example: firstObjectField1
+                        example: firstObjectField1 example
                       firstObjectField2:
                         type: string
-                        example: firstObjectField2
+                        example: firstObjectField2 example
                   - type: object
                     description: desc of second allOf object
                     properties:
                       secondObjectField1:
                         type: string
-                        example: secondObjectField1
+                        example: secondObjectField1 example
                       secondObjectField2:
                         type: string
-                        example: secondObjectField2
+                        example: secondObjectField2 example
 
         "201":
           description: Uses OneOf with all schemas inlined
@@ -142,19 +142,19 @@ paths:
                     properties:
                       firstObjectField1:
                         type: string
-                        example: firstObjectField1
+                        example: firstObjectField1 example
                       firstObjectField2:
                         type: string
-                        example: firstObjectField2
+                        example: firstObjectField2 example
                   - type: object
                     description: desc2
                     properties:
                       secondObjectField1:
                         type: string
-                        example: secondObjectField1
+                        example: secondObjectField1 example
                       secondObjectField2:
                         type: string
-                        example: secondObjectField2
+                        example: secondObjectField2 example
 
         "202":
           description: Uses AllOf to references.  Should be identical to 200.
@@ -187,4 +187,19 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/usesAnyOf"
+
+        "299":
+          description: "No composition, just simple fields"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  firstObjectField1:
+                    type: string
+                    example: firstObjectField1 example
+                  firstObjectField2:
+                    type: string
+                    example: firstObjectField2 example
+
 
