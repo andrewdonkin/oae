@@ -4,9 +4,9 @@ security: [ ]
 
 info:
   version: "1"
-  title: Checking allOf and anyOf
+  title: Checking allOf and oneOf
   description: |
-    Testing handling of allOf and anyOf.
+    Testing handling of `allOf` and `oneOf`.  Go to the "Look at me!" path.
 
 components:
   schemas:
@@ -57,9 +57,9 @@ components:
               type: string
               example: secondObjectField2 example
 
-    usesAnyOf:
-      title: Uses anyOf title
-      description: uses anyOf description
+    usesOneOf:
+      title: Uses oneOf title
+      description: uses `oneOf` description
       oneOf:
         - type: object
           description: desc1
@@ -73,7 +73,7 @@ components:
               type: string
               example: firstObjectField2 example
         - type: object
-          description: "desc of second anyOf object.  RapiDoc shows it (go RapiDoc!)"
+          description: "desc of second oneOf object.  RapiDoc shows it (go RapiDoc!)"
           properties:
             secondObjectField1:
               type: string
@@ -86,7 +86,7 @@ components:
 paths:
   /api:
     get:
-      summary: AllOf path summary
+      summary: Look at me!
       description: |
           Responses 200, 202, and 204 should appear the same.  Responses 201, 203, and 205 should
           appear the same.
@@ -118,7 +118,7 @@ paths:
                         example: secondObjectField2 example
 
         "201":
-          description: Uses OneOf with all schemas inlined
+          description: Uses `OneOf` with all schemas inlined
           content:
             application/json:
               schema:
@@ -157,7 +157,7 @@ paths:
                         example: secondObjectField2 example
 
         "202":
-          description: Uses AllOf to references.  Should be identical to 200.
+          description: Uses `allOf` to references.  Should be identical to 200.
           content:
             application/json:
               schema:
@@ -166,7 +166,7 @@ paths:
                   - $ref: "#/components/schemas/simple2"
 
         "203":
-          description: Uses AnyOf to references.  Should be identical to 201.
+          description: Uses `oneOf` to references.  Should be identical to 201.
           content:
             application/json:
               schema:
@@ -175,18 +175,18 @@ paths:
                   - $ref: "#/components/schemas/simple2"
 
         "204":
-          description: Uses a reference to a schema that uses allOf
+          description: Uses a reference to a schema that uses `allOf`
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/usesAllOf"
 
         "205":
-          description: Uses a reference to a schema that uses anyOf
+          description: Uses a reference to a schema that uses `oneOf`
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/usesAnyOf"
+                $ref: "#/components/schemas/usesOneOf"
 
         "299":
           description: "No composition, just simple fields"
