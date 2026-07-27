@@ -1,8 +1,10 @@
 # Exploring OpenAPI Explorer
 
-[Issue 288 demo](288) (resolved):  info headings not being navigable.  Plus H1 headings not shifting the highlight, also fixed.
+[allof](allOf/oneOf handling):  compare all six renderers' handling of allOf and oneOf.
 
 [Issue 289 demo](289) (fixed):  request body example descriptions not changing with the example.
+
+[Issue 288 demo](288) (resolved):  info headings not being navigable.  Plus H1 headings not shifting the highlight, also fixed.
 
 [Not handing <<-style merge keys demo](mergekey) ([github issue
 290](https://github.com/Authress-Engineering/openapi-explorer/issues/290), closed with no action
