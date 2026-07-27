@@ -10,16 +10,15 @@ taken but a good explanation): the YAML parser not supporting merge keys, an ori
 now-obsolete extension to the YAML spec which I grew to rely on :-(
 
 [Wrong default for parameter `explode` demo](explode): ([github issue
-291](https://github.com/Authress-Engineering/openapi-explorer/issues/291) ) assuming a default of
-'false' for 'explode' on query parameters if you do not specify 'style=form' when it [was true in
-3.0](https://swagger.io/docs/specification/v3_0/serialization/#query-parameters) and [might be the
-same in 3.1](https://swagger.io/specification/#parameter-object).
+291](https://github.com/Authress-Engineering/openapi-explorer/issues/291) closed, Authress will not
+address) assuming a default of 'false' for 'explode' on query parameters if you do not specify
+'style=form' when it [was true in
+3.0](https://swagger.io/docs/specification/v3_0/serialization/#query-parameters) and [is the same in
+3.1](https://swagger.io/specification/#parameter-object).  Workaround: be explicit about your style
+and explode.
 
 <hr/>
 
-[Source repo](https://github.com/andrewdonkin/oae) if you are
-looking at the github.io page.
-[github.io page](https://andrewdonkin.github.io/oae/) if you are
-looking at the source repo.
-
-
+This README is viewable through both the Github [source repo](https://github.com/andrewdonkin/oae)
+and [github.io](https://andrewdonkin.github.io/oae/).  To demonstrate the issues you want to be
+looking at the latter.

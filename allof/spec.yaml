@@ -1,0 +1,100 @@
+openapi: 3.1.0
+servers: [url: https://localhost:8904]
+security: [ ]
+
+info:
+  version: 1
+  title: Checking allOf and anyOf
+  description: |
+    Testing handling of allOf and anyOf
+
+components:
+  schemas:
+    usesAllOf:
+      title: Uses allOf
+      description: uses allOf
+      allOf:
+        - type: object
+          description: desc of first allOf object
+          properties:
+            firstObjectField1:
+              type: string
+              example: firstObjectField1
+        - type: object
+          description: desc of second allOf object
+          properties:
+            secondObjectField1:
+              type: string
+              example: secondObjectField1
+    
+paths:
+  /api:
+    get:
+      summary: AllOf
+      description: |
+        TODO
+
+      responses:
+        "200":
+          description: AllOf
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - type: object
+                    description: desc of first allOf object
+                    properties:
+                      firstObjectField1:
+                        type: string
+                        example: firstObjectField1
+                      firstObjectField2:
+                        type: string
+                        example: firstObjectField2
+                  - type: object
+                    description: desc of second allOf object
+                    properties:
+                      secondObjectField1:
+                        type: string
+                        example: secondObjectField1
+                      secondObjectField2:
+                        type: string
+                        example: secondObjectField2
+
+        "201":
+          description: Uses OneOf
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - type: object
+                    description: desc1
+                    # OpenAPI Explorer shows the object's title.  No default.  Picker always uses "Example-n".
+                    # Redoc uses the title in its picker.  Default is the object's type (probably "object")
+                    # RapiDoc uses the title in its picker.  Default is "Example n".
+
+                    # Scalar is like Redoc:  "title1" for the first and "object" for the second.
+                    # Its example only shows the first option:  you cannot see an example of the
+                    # second option.
+
+                    # Zudoku is like Redoc except "title1" for the first and an auto-generated
+                    # "Variant 2" for the second.  It also only shows the first option as an
+                    # example.
+                    
+                    title: title1
+                    summary: summary1
+                    properties:
+                      firstObjectField1:
+                        type: string
+                        example: firstObjectField1
+                      firstObjectField2:
+                        type: string
+                        example: firstObjectField2
+                  - type: object
+                    description: desc2
+                    properties:
+                      secondObjectField1:
+                        type: string
+                        example: secondObjectField1
+                      secondObjectField2:
+                        type: string
+                        example: secondObjectField2
