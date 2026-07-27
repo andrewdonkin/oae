@@ -1,8 +1,8 @@
 # allOf
 
-> Testing handling of allOf and anyOf
+> Testing handling of allOf and anyOf.
 
 ## API Reference
 
-- [Checking allOf and anyOf](/api.html): Testing handling of allOf and anyOf
-- [AllOf](/api.html#operation-api-get): GET /api - TODO
+- [Checking allOf and anyOf](/api.html): Testing handling of allOf and anyOf.
+- [AllOf](/api.html#operation-api-get): GET /api - Responses 200, 202, and 204 should appear the same.  Responses 201, 203, and 205 should

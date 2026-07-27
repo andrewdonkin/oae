@@ -1,6 +1,6 @@
 # allOf
 
-Testing handling of allOf and anyOf
+Testing handling of allOf and anyOf.
 
 
 ## API Reference
@@ -10,7 +10,7 @@ Testing handling of allOf and anyOf
 Path: `/api.html`
 Version: 1
 
-Testing handling of allOf and anyOf
+Testing handling of allOf and anyOf.
 
 
 #### Operations
@@ -19,13 +19,21 @@ Testing handling of allOf and anyOf
 
 Summary: AllOf
 
-TODO
+Responses 200, 202, and 204 should appear the same.  Responses 201, 203, and 205 should
+appear the same.
 
 
 Responses:
-- 200: AllOf
-- 201: Uses OneOf
+- 200: Uses `allOf` on in-line schemas.
+- 201: Uses OneOf with all schemas inlined
+- 202: Uses AllOf to references.  Should be identical to 200.
+- 203: Uses AnyOf to references.  Should be identical to 201.
+- 204: Uses a reference to a schema that uses allOf
+- 205: Uses a reference to a schema that uses anyOf
 
 #### Models
 
-- usesAllOf: uses allOf
+- simple1: Simple schema one description
+- simple2: Simple schema two description
+- usesAllOf: uses `allOf` description
+- usesAnyOf: uses anyOf
