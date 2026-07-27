@@ -1,2 +1,8 @@
 node_modules
 #dist
+dist/index.html
+
+dist/llms*
+dist/_og
+dist/search-index.html
+dist/sitemap
