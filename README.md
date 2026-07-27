@@ -1,6 +1,6 @@
 # Exploring OpenAPI Explorer
 
-[allof](allOf/oneOf handling):  compare all six renderers' handling of allOf and oneOf.
+[allOf/oneOf handling](allof):  compare all six renderers' handling of `allOf` and `oneOf`.
 
 [Issue 289 demo](289) (fixed):  request body example descriptions not changing with the example.
 
