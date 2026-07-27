@@ -6,15 +6,17 @@
   <body>
     <h1>allOf</h1>
 
-    <p>what's the problem?
-
-    </p>
+    <p>Six renderers all showing their representations of the same OAS specification.</p>
+    <p>In this case, the spec shows schemas making use of 'allOf' and 'oneOf'.  'allOf' is fairly
+    simple so the only stand-out is Sourcey, which does not render schemas straight into path
+    sections.  'oneOf' is much more difficult to render thoroughly and shows where the six
+    contenders differ.</p>
     
-    <p><a href=oae.html>OpenAPI Explorer</a></p>
-    <p><a href=rapidoc.html>RapiDoc</a></p>
-    <p><a href=redoc.html>Redoc</a></p>
-    <p><a href=scalar.html>Scalar</a></p>
-    <p><a href=dist/api.html>Sourcey</a></p>
-    <p><a href=zudoku.html>Zudoku</a></p>
+    <p><a href=oae.html>OpenAPI Explorer</a> is the best at 'oneOf' here.   Examples are always called "Example-n" but that is a minor complaint.</p>
+    <p><a href=rapidoc.html>RapiDoc</a> does a great job, but the project appears to be dead.</p>
+    <p><a href=redoc.html>Redoc</a> does not show schema summaries or descriptions. </p>
+    <p><a href=scalar.html>Scalar</a> shows the schema's description but you cannot change the example from that of the first schema.</p>
+    <p><a href=dist/api.html>Sourcey</a> does not render schemas in path result sections.</p>
+    <p><a href=zudoku.html>Zudoku</a> much like Scalar, displays the schemas very well but does not show all the examples.</p>
   </body>
 </html>
