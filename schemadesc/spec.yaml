@@ -1,0 +1,78 @@
+openapi: 3.1.0
+info:
+  title: Redoc not showing schema descriptions
+  version: '1.0'
+  description: "Click on the 'CLICK ME!' operation if it isn't visible already."
+
+paths:
+  /example:
+    post:
+      summary: "CLICK ME!"
+      description: "Path description"
+      requestBody:
+        description: request body description          
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/objectWithFieldsSchema'
+      responses:
+        "200":
+          description: Response with an object, so Redoc does not show the description.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  one: { type: string }
+                description: |
+                  !!!Response description not shown if response is an object with properties!!!
+
+        "222":
+          description: Response with no object, shows desc.
+          content:
+            application/json:
+              schema:
+                type: string
+                description: |
+                  !!!Response description shown because response is not an object with properties!!!
+
+        "233":
+          description: Response with an array, shows desc.
+          content:
+            application/json:
+              schema:
+                type: array
+                description: |
+                  !!!Response description not shown because response is an array!!!
+
+components:
+  schemas:
+    objectWithFieldsSchema:
+      type: object
+      properties:
+        one:
+          type: string
+      description: |
+        !!!schema description not shown because the object is an object with properties!!!
+
+    stringSchema:
+      type: string
+      description: |
+        !!!Redoc shows description if the schema is a simple string scalar!!!
+
+    emptyObjectSchema:
+      type: object
+      description: |
+        !!!Redoc shows description if the schema is an ill-defined object, lacking properties!!!
+
+    arraySchema:
+      type: array
+      description: |
+        !!!schema description not shown because type is array!!!
+
+    arraySchema2:
+      type: array
+      items:
+        type: string
+      description: |
+        !!!schema description not shown because type is array with defined elements!!!
