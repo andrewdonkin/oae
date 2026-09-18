@@ -21,6 +21,14 @@ and explode.
 
 <hr/>
 
+## Redoc issues
+
+[Not displaying schema descriptions](schemadesc):  [Redoc issue
+720](https://github.com/Redocly/redoc/issues/720).  Both version 2 and 3 do not display a schema's
+description if the schema is an object with properties.  They do if it is a simple scalar.
+
+<hr/>
+
 This README is viewable through both the Github [source repo](https://github.com/andrewdonkin/oae)
 and [github.io](https://andrewdonkin.github.io/oae/).  To demonstrate the issues you want to be
 looking at the latter.

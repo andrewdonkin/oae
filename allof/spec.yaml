@@ -82,6 +82,45 @@ components:
               type: string
               example: secondObjectField2 example
 
+    inherited:
+      title: Inherited schema one title
+      description: Inherited schema one description
+      type: object
+      required: [ discriminatorField ]
+      properties:
+        discriminatorField:
+          type: string
+# What is this for?
+      discriminator:
+        propertyName: discriminatorField
+
+    choiceOne:
+      title: choice one schema one title
+      description: choice one schema one description
+      allOf:
+        - $ref: "#/components/schemas/inherited"
+        - type: object
+          properties:
+            inheriting1ObjectField1:
+              type: string
+              example: firstObjectField1 example
+            inheriting1ObjectField2:
+              type: string
+              example: firstObjectField2 example
+
+    choiceTwo:
+      title: choice two schema one title
+      description: choice two schema one description
+      allOf:
+        - $ref: "#/components/schemas/inherited"
+        - type: object
+          properties:
+            inheriting2ObjectField1:
+              type: string
+              example: secondObjectField1 example
+            inheriting2ObjectField2:
+              type: string
+              example: secondObjectField2 example
     
 paths:
   /api:
@@ -203,3 +242,20 @@ paths:
                     example: firstObjectField2 example
 
 
+  /api/discrim:
+    get:
+      summary: Look at me using a discriminator!
+      description: |
+          ...
+
+      responses:
+        "200":
+          description: Uses `oneOf` with a discriminator.
+          content:
+            application/json:
+              schema:
+                discriminator:
+                  propertyName: discriminatorField
+                oneOf:
+                  - $ref: "#/components/schemas/choiceOne"
+                  - $ref: "#/components/schemas/choiceTwo"
