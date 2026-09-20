@@ -37,7 +37,7 @@ paths:
                   !!!Response description shown because response is not an object with properties!!!
 
         "233":
-          description: Response with an array, shows desc.
+          description: Response with an array, shows desc.  Zudoko hates this.
           content:
             application/json:
               schema:
@@ -69,6 +69,8 @@ components:
       type: array
       description: |
         !!!schema description not shown because type is array!!!
+
+        Zudoku refuses to render malformed arrays like this one, that do not define their elements.
 
     arraySchema2:
       type: array
