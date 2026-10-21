@@ -3,7 +3,7 @@ components: { schemas: { must_have_a_schema_for_linting: { type: string }}}
 servers: [url: https://localhost:8904]
 info:
   version: "1.0"
-  title: "Demonstrating OpenAPI Explorer issue 288"
+  title: "Demonstrating OpenAPI Explorer issue 288, Redoc3 issue 2876"
   description: |
     First line of the info's description.  No heading precedes it.
 
@@ -35,11 +35,14 @@ info:
     asdf
 
     ## Info H2 _not_ inside an H1
-    RapiDoc doesn't render 
+    RapiDoc doesn't render.
+
+    Redoc v3 renders directly in the ToC.  There is no H1 to hide it.
     <hr/>
 
     ### Info H3 in the H2 not in the H1
-    H3 text.
+    Redoc v3 renders directly in the ToC at the same level as the H2.  There is no H1 to hide it.
+
 
     asdfdfs
     asdf
@@ -334,7 +337,8 @@ info:
 
     # Info H1 heading.  CLICK ME SECOND!
 
-    Redoc's problem is that there is no navbar entry for the top of this description, so viewers can easily think that this is the first line of content.
+    Redoc v2's old problem (fixed) was that there was no navbar entry for the top of this description, so
+    viewers could easily think that this is the first line of content.
 
     asdf
     adfs
@@ -523,16 +527,29 @@ info:
     <hr/>
 
     ## Info H2 inside an H1
-    RapiDoc doesn't render 
+    RapiDoc doesn't render.
+
+    Redoc v3 tucks this inside the collapsible H1, indented deeper than the H2 and H3 that are above the H1.
     <hr/>
 
     ### Info H3 in the H2 in the H1
-    H3 text.
+    Redoc v3 places this at the same indentation as the preceding H2, deeper than the H2 and H3 that are above the H1.
 
 tags:
 - name: Tag with headings
   description: |
-    # h1.  CLICK ME FIRST!
+
+    ## h2
+    body 2 outside an H1.
+    ## h2.2
+    body 2.2 outside an H1.
+    ## h22.  Clashes with the one above.
+    body 22.  The href for this section clashes with h2.2
+
+    ### h3.  Level-three heading in the "Tag with headings" tag.
+    H3 text.
+
+    # h1.
     body 1
     ## h2
     body 2
