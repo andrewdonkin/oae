@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Redoc v3 issue 288:  headings in the ToC</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="https://cdn.jsdelivr.net/npm/@scalar/api-reference"></script>
+    <script>
+      Scalar.createApiReference('#app', {
+	  url: 'issue_288.yaml',
+	  documentDownloadType: 'direct',
+	  agent: { disabled: true, },
+	  hideClientButton: true,
+	  zzzexpandAllResponses: "true saves some clicks expanding the 200 response but makes for an extremely long document, and you cannot collapse responses",
+	  expandAllResponses: true,
+	  orderRequiredPropertiesFirst: true,
+	  tagsSorter: 'order',
+	  zzzztagsSorter: 'alpha buries the changelog after cardholders',
+	  operationsSorter: (a, b) => {
+	      const verbOrder = ['delete', 'put', 'post', 'patch', 'get']
+	      return (a.method != b.method) ? verbOrder.indexOf(b.method) - verbOrder.indexOf(a.method) : a.path.localeCompare(b.path)
+	  },
+      })
+    </script>
+  </body>
+</html>
