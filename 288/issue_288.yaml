@@ -534,6 +534,8 @@ tags:
     ## h22.  Clashes with the one above.
     body 22.  The href for this section clashes with h2.2
 
+    ### h3.  Level-three heading in the "Tag with headings" tag.
+
 paths:
   /api:
     get:
