@@ -34,6 +34,13 @@ info:
 
     asdf
 
+    ## Info H2 _not_ inside an H1
+    RapiDoc doesn't render 
+    <hr/>
+
+    ### Info H3 in the H2 not in the H1
+    H3 text.
+
     asdfdfs
     asdf
     adfs
@@ -515,11 +522,11 @@ info:
     
     <hr/>
 
-    ## Info H2.
+    ## Info H2 inside an H1
     RapiDoc doesn't render 
     <hr/>
 
-    ### Info H3.
+    ### Info H3 in the H2 in the H1
     H3 text.
 
 tags:
