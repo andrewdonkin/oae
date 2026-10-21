@@ -43,7 +43,7 @@ paths:
               schema:
                 type: array
                 description: |
-                  !!!Response description not shown because response is an array!!!
+                  !!!Response description not shown by Redoc v2 because response is an array, but shown by Redoc v3.!!!
 
 components:
   schemas:
